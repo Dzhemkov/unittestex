@@ -57,6 +57,7 @@ public class Dog extends Pet implements PetImpl {
         super.animalType = animalType;
         this.numberOfLegs = 4;
         this.breed = breed;
+
     }
 
     /**
@@ -80,7 +81,7 @@ public class Dog extends Pet implements PetImpl {
                 language = "The dog goes woof! woof!";
                 break;
             case WILD:
-                language = "The dog goes grr! grr!";
+                language = "The dog goes Grr! Grr!";
                 break;
             default:
                 language = "The dog goes " + super.getPetType().speak + "! " + super.getPetType().speak + "!";

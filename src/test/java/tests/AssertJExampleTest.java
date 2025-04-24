@@ -4,6 +4,7 @@ import animals.AnimalType;
 import animals.petstore.pet.Pet;
 import animals.petstore.pet.attributes.Breed;
 import animals.petstore.pet.attributes.Gender;
+import animals.petstore.pet.attributes.PetType;
 import animals.petstore.pet.attributes.Skin;
 import animals.petstore.pet.types.Dog;
 import org.junit.jupiter.api.DisplayName;
@@ -42,7 +43,6 @@ public class AssertJExampleTest
     public void abcTest()
     {
         assertThat("abc").isEqualTo(123);
-
     }
 
     @Test
@@ -50,7 +50,6 @@ public class AssertJExampleTest
     public void emptyStringTest()
     {
         assertThat("".isEmpty()).isTrue();
-
     }
 
     @Test
@@ -79,4 +78,28 @@ public class AssertJExampleTest
                 .isNotEmpty()
                 .doesNotContainNull();
     }
+
+    //------New Tests I have added to increase code coverage-----------------
+
+    @Test
+    @DisplayName("First Dog is Male")
+    public void dogIsMaleTest()
+    {
+        assertThat(dListActual.get(0).getGender()).isEqualTo(Gender.MALE);
+    }
+
+    @Test
+    @DisplayName("Third Dog is Female")
+    public void dogIsFemaleTest()
+    {
+        assertThat(dListActual.get(2).getGender()).isEqualTo(Gender.FEMALE);
+    }
+
+    @Test
+    @DisplayName("Second Dog Costs $750")
+    public void dogIs750DollarsTest()
+    {
+        assertThat(dListActual.get(1).getCost().compareTo(new BigDecimal("750")));
+    }
+
 }

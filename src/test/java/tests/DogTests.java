@@ -18,7 +18,6 @@ public class DogTests {
         actualDog = new Dog(AnimalType.DOMESTIC, Skin.FUR, Gender.UNKNOWN, Breed.UNKNOWN);
     }
 
-
     @Test
     @Order(1)
     @DisplayName("Animal Test Type Tests Domestic")
